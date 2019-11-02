@@ -13,12 +13,13 @@ class Landing extends Component {
 
   post = async (url) => {
     try {
-      console.log(this.props);
-      const idToken = await this.props.firebase.auth.currentUser.getIdToken(true);
-      console.log(idToken);
-      const body = {
-        firebaseIdToken: idToken
+      let body = { firebaseIdToken: null };
+      if(this.props.firebase.auth.currentUser) {
+        const idToken = await this.props.firebase.auth.currentUser.getIdToken(true);
+        console.log(idToken);
+        body.firebaseIdToken = idToken;
       }
+
 
       const response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.

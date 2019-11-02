@@ -2,12 +2,18 @@
 
 Test application using Firebase to authenticate a React and Express application
 
-## Tutorial
+## Tutorials
 
-Created following this tutorial:
-
+Front end created following this tutorial:
 https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial#react-router-for-firebase-auth
 
+
+Server Firebase SDK setup:
+https://firebase.google.com/docs/admin/setup/
+
+
+Generating ID Tokens and validating them on the server side:
+https://firebase.google.com/docs/auth/admin/verify-id-tokens
 
 
 ## Environment variables
