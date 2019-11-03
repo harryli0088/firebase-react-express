@@ -1,1 +1,12 @@
 FIREBASE_DATABASE_URL=xxxx
+
+FIREBASE_type="xxxx"
+FIREBASE_project_id="xxxx"
+FIREBASE_private_key_id="xxxx"
+FIREBASE_private_key="xxxx"
+FIREBASE_client_id="xxxx"
+FIREBASE_auth_uri="xxxx"
+FIREBASE_token_uri="xxxx"
+FIREBASE_auth_provider_x509_cert_url="xxxx"
+FIREBASE_client_x509_cert_url="xxxx"
+FIREBASE_DATABASE_URL="xxxx"
