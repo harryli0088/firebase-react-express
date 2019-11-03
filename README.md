@@ -21,10 +21,10 @@ To deploy this express api server, follow the Heroku tutorial: https://devcenter
 
 
 ## Environment variables
-In the server and client directories, there are .envExample files that show the format that your .env files should have. Copy and paste your Firebase configs info into those files
+In the root and client directories, there are .envExample files that show the format that your .env files should have. Copy and paste your Firebase configs info into those files
 
-### Server Directory
-In the server directory, rename the file to
+### Root Directory
+In the root directory, rename the file to
 ```
 .env
 ```

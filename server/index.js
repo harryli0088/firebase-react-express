@@ -13,13 +13,13 @@ const port = 5000
 //set up environment variables
 const dotenv = require('dotenv');
 dotenv.config();
-console.log("process.env.FIREBASE_DATABASE_URL",process.env.FIREBASE_DATABASE_URL);
 
 
 
 //set up firebase
 const admin = require('firebase-admin');
-const serviceAccount = require("./serviceAccountKey.json");
+// const serviceAccount = require("./serviceAccountKey.json");
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: process.env.FIREBASE_DATABASE_URL
