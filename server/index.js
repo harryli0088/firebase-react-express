@@ -19,6 +19,7 @@ dotenv.config();
 //set up firebase
 const admin = require('firebase-admin');
 // const serviceAccount = require("./serviceAccountKey.json");
+console.log(process.env.FIREBASE_private_key);
 const serviceAccount = {
   type: process.env.FIREBASE_type,
   project_id: process.env.FIREBASE_project_id,
@@ -39,6 +40,10 @@ admin.initializeApp({
 
 
 //set up express endpoints
+app.get('/', (req, res) => {
+  res.send(JSON.stringify('Test Server using Firebase to authenticate API requests'))
+})
+
 app.post('/', (req, res) => {
   console.log("/ request received", req.body.firebaseIdToken, req.body.firebaseUid);
   res.send(JSON.stringify('Success! Anyone can access this data'))
