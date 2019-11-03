@@ -37,6 +37,8 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === '';
     return (
       <form onSubmit={this.onSubmit}>
+        <h2>Reset My Password</h2>
+        
         <input
           name="email"
           value={this.state.email}

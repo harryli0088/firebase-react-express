@@ -7,7 +7,7 @@ class Landing extends Component {
     super(props);
 
     this.state = {
-      result: ""
+      result: "(Click one of the buttons to see the results of each request)"
     };
   }
 
@@ -65,7 +65,11 @@ class Landing extends Component {
 
         <br/>
 
-        {this.state.result ? "Result: "+this.state.result : ""}
+        <div>(Still need to add roles)</div>
+
+        <hr/>
+
+        <strong>Results: </strong>{this.state.result}
       </div>
     );
   }

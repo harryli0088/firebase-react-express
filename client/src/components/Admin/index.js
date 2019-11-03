@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+import { withAuthorization } from '../Session';
 import { withFirebase } from '../Firebase';
 
 class AdminPage extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       loading: false,
       users: [],
@@ -13,9 +15,9 @@ class AdminPage extends Component {
 
   componentDidMount() {
     this.setState({ loading: true });
+
     this.props.firebase.users().on('value', snapshot => {
       const usersObject = snapshot.val();
-      console.log("usersObject",usersObject);
 
       const usersList = Object.keys(usersObject).map(key => ({
         ...usersObject[key],
@@ -39,7 +41,9 @@ class AdminPage extends Component {
     return (
       <div>
         <h1>Admin</h1>
+
         {loading && <div>Loading ...</div>}
+
         <UserList users={users} />
       </div>
     );
@@ -64,4 +68,6 @@ const UserList = ({ users }) => (
   </ul>
 );
 
-export default withFirebase(AdminPage);
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(withFirebase(AdminPage));
