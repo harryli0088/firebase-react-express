@@ -16,14 +16,27 @@ Generating ID Tokens and validating them on the server side:
 https://firebase.google.com/docs/auth/admin/verify-id-tokens
 
 
-## Environment variables
-In the root and client directories, there are .envExample files that show the format that your .env files should have. Copy and paste your Firebase configs info into those files
+## Deploy Express API Server to Heroku
+To deploy this express api server, follow the Heroku tutorial: https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
 
-In the root directory, rename the file to
+
+## Environment variables
+In the server and client directories, there are .envExample files that show the format that your .env files should have. Copy and paste your Firebase configs info into those files
+
+### Server Directory
+In the server directory, rename the file to
 ```
 .env
 ```
 
+In production, it is ignored, and you should instead set the environment variables through the Heroku CLI
+
+    heroku config:set GITHUB_USERNAME=joesmith
+
+You can read more here: https://devcenter.heroku.com/articles/config-vars
+
+
+### Client Directory
 In the client directory, rename it either
 ```
 .env.development
