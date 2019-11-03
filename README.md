@@ -17,7 +17,11 @@ https://firebase.google.com/docs/auth/admin/verify-id-tokens
 
 
 ## Environment variables
-There is an .envExample file that shows the format that your .env should have. Copy and paste your Firebase config info into that file then rename it either
+In the root and client directories, there are .envExample files that show the format that your .env files should have. Copy and paste your Firebase configs info into those files
+
+In the root directory, rename the file to .env
+
+In the client directory, rename it either
 ```
 .env.development
 ```

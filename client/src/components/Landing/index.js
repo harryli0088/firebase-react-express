@@ -13,14 +13,20 @@ class Landing extends Component {
 
   post = async (url) => {
     try {
-      let body = { firebaseIdToken: null };
+      let body = {
+        firebaseIdToken: null,
+        firebaseUid: null
+      };
+
+      //if the user is logged in, try to get the firebase token
       if(this.props.firebase.auth.currentUser) {
         const idToken = await this.props.firebase.auth.currentUser.getIdToken(true);
-        console.log(idToken);
+        console.log("got token from firebase!", idToken);
         body.firebaseIdToken = idToken;
+        body.firebaseUid = this.props.firebase.auth.currentUser.uid;
       }
 
-
+      //send the PORT request with the token (or not) in the body of the request
       const response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
@@ -35,7 +41,7 @@ class Landing extends Component {
         body: JSON.stringify(body) // body data type must match "Content-Type" header
       });
       const data = await response.json();
-      console.log("awaited response", data);
+      console.log("response from server", data);
       this.setState({result: data});
     }
     catch(error) {
