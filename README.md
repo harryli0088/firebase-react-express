@@ -46,3 +46,7 @@ or
 .env.production
 ```
 depending on whether you want to use those credentials for production or development
+
+## Diagram
+
+https://docs.google.com/drawings/d/1XcbWLn4yp8az43Z47M-Sjrpf_fjxEQIH619jNJuiNb0/edit?usp=sharing
