@@ -19,7 +19,6 @@ const port = process.env.PORT
 //set up firebase
 const admin = require('firebase-admin');
 // const serviceAccount = require("./serviceAccountKey.json");
-console.log(process.env.FIREBASE_private_key);
 const serviceAccount = {
   type: process.env.FIREBASE_type,
   project_id: process.env.FIREBASE_project_id,
