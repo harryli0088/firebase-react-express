@@ -6,13 +6,13 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false })) // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()) // parse application/json
-const port = process.env.PORT
 
 
 
 //set up environment variables
 const dotenv = require('dotenv');
 dotenv.config();
+const port = process.env.PORT
 
 
 
