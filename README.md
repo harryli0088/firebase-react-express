@@ -4,7 +4,7 @@ Test application using Firebase to authenticate a React and Express application
 
 ## Tutorials
 
-Front end created following this tutorial:
+Front end created following this FANTASTIC tutorial:
 https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial#react-router-for-firebase-auth
 
 
@@ -19,7 +19,10 @@ https://firebase.google.com/docs/auth/admin/verify-id-tokens
 ## Environment variables
 In the root and client directories, there are .envExample files that show the format that your .env files should have. Copy and paste your Firebase configs info into those files
 
-In the root directory, rename the file to .env
+In the root directory, rename the file to
+```
+.env
+```
 
 In the client directory, rename it either
 ```
