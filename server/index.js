@@ -61,7 +61,7 @@ app.post('/loggedIn', async (req, res) => {
   }
   catch(error) {
     console.log("error", error);
-    res.send(JSON.stringify("Server encountered an error while trying to verify the client's identity"))
+    res.send(JSON.stringify("Error! You must be logged in to access this data"))
   }
 })
 

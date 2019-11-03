@@ -11,7 +11,7 @@ class Landing extends Component {
     };
   }
 
-  post = async (url) => {
+  post = async (endpoint) => {
     try {
       let body = {
         firebaseIdToken: null,
@@ -27,7 +27,7 @@ class Landing extends Component {
       }
 
       //send the PORT request with the token (or not) in the body of the request
-      const response = await fetch(url, {
+      const response = await fetch(process.env.REACT_APP_SERVER_URL+endpoint, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -54,13 +54,13 @@ class Landing extends Component {
     return (
       <div>
         <div>
-          <button onClick={e => this.post("http://localhost:5000/")}>Send GET request to server "/"</button>
+          <button onClick={e => this.post("/")}>Send GET request to server "/"</button>
         </div>
 
         <br/>
 
         <div>
-          <button onClick={e => this.post("http://localhost:5000/loggedIn")}>Send GET request to server "/loggedIn"</button>
+          <button onClick={e => this.post("/loggedIn")}>Send GET request to server "/loggedIn"</button>
         </div>
 
         <br/>
