@@ -15,6 +15,9 @@ https://firebase.google.com/docs/admin/setup/
 Generating ID Tokens and validating them on the server side:
 https://firebase.google.com/docs/auth/admin/verify-id-tokens
 
+Configuring Firebase user roles rules (not done in this demo):
+https://firebase.google.com/docs/firestore/solutions/role-based-access
+
 
 ## Deploy Express API Server to Heroku
 To deploy this express api server, follow the Heroku tutorial: https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
@@ -46,6 +49,18 @@ or
 .env.production
 ```
 depending on whether you want to use those credentials for production or development
+
+## User roles
+For the purposes of this demo, I have added user roles on the server and database sides. The server has two role based APIs that can only be accessed by certain roles. In the database, I associated a user object with the relevant users in the format:
+```
+uid {
+  roles: {
+    0: "roleA",
+    1: "roleB",
+    ...
+  }
+}
+```
 
 ## Diagram
 

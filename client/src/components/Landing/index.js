@@ -12,6 +12,7 @@ class Landing extends Component {
   }
 
   post = async (endpoint) => {
+    this.setState({result:""});
     try {
       let body = {
         firebaseIdToken: null,
@@ -51,21 +52,15 @@ class Landing extends Component {
 
 
   render() {
+    const links = ["","loggedIn","roleA","roleB","roleAorB"];
     return (
       <div>
-        <div>
-          <button onClick={e => this.post("/")}>Send GET request to server "/"</button>
-        </div>
-
-        <br/>
-
-        <div>
-          <button onClick={e => this.post("/loggedIn")}>Send GET request to server "/loggedIn"</button>
-        </div>
-
-        <br/>
-
-        <div>(Still need to add roles)</div>
+        {links.map((l,i) =>
+          <div key={i}>
+            <button onClick={e => this.post("/"+l)}>Send GET request to server "/{l}"</button>
+            <br/><br/>
+          </div>
+        )}
 
         <hr/>
 

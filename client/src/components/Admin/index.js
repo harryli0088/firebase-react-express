@@ -41,7 +41,9 @@ class AdminPage extends Component {
       <div>
         <h1>Admin</h1>
 
-        <div>Not working yet...</div>
+        <div>If you choose to configure your Firebase database so that this user has read access to the users, they will display below:</div>
+
+        <br/>
 
         {loading && <div>Loading ...</div>}
 
@@ -56,13 +58,13 @@ const UserList = ({ users }) => (
     {users.map(user => (
       <li key={user.uid}>
         <span>
-          <strong>ID:</strong> {user.uid}
+          <strong> ID: </strong> {user.uid}
         </span>
         <span>
-          <strong>E-Mail:</strong> {user.email}
+          <strong> E-Mail: </strong> {user.email}
         </span>
         <span>
-          <strong>Username:</strong> {user.username}
+          <strong> Username: </strong> {user.username}
         </span>
       </li>
     ))}
