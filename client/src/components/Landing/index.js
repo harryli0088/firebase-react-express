@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { withFirebase } from '../Firebase';
+import ReactGA from 'react-ga';
 
 class Landing extends Component {
   constructor(props) {
@@ -50,6 +51,16 @@ class Landing extends Component {
     }
   };
 
+  //data rention: https://support.google.com/analytics/answer/7667196?hl=en
+  clickTrackingLink = e => { //how to set up event tracking: https://developers.google.com/analytics/devguides/collection/analyticsjs/events, react version: https://github.com/react-ga/react-ga
+    ReactGA.event({
+      category: 'Link',
+      action: 'click',
+      value: 1,
+      label: "test"
+    });
+  }
+
 
   render() {
     const links = ["","loggedIn","roleA","roleB","roleAorB"];
@@ -62,9 +73,18 @@ class Landing extends Component {
           </div>
         )}
 
-        <hr/>
+        <br/>
 
         <strong>Results: </strong>{this.state.result}
+
+        <hr/>
+        <hr/>
+
+        <br/>
+        <div>
+          I want to track how many times this link is clicked:
+          <a onClick={this.clickTrackingLink} href="https://www.lobbyview.org/#!/" target="_blank" rel="noopener noreferrer">https://www.lobbyview.org/#!/</a>
+        </div>
       </div>
     );
   }
